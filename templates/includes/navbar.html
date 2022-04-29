@@ -13,6 +13,11 @@
     </li>
     <li class="nav-item dropdown">
       <a href="#" class="nav-link"> USD </a>
+      <ul class="dropdown-menu small">
+        <li><a class="dropdown-item" href="#">EUR</a></li>
+        <li><a class="dropdown-item" href="#">AED</a></li>
+        <li><a class="dropdown-item" href="#">RUBL </a></li>
+        </ul>
     </li>
     </ul>
     <ul class="navbar-nav">
@@ -37,9 +42,9 @@
         <i class="fa fa-bars"></i> All category
       </button>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="{% url 'store' %}"> All Products </a>
+        <a class="dropdown-item" href="{% url 'store' %}">All Products </a>
         {% for category in links %}
-        <a class="dropdown-item" href="{{ category.get_url }}"> {{ category.category_name }} </a>
+          <a class="dropdown-item" href="{{ category.get_url }}">{{ category.category_name }} </a>
         {% endfor %}
       </div>
     </div>  <!-- category-wrap.// -->
@@ -70,10 +75,10 @@
           </div>
           {% else %}
           <div class="widget-header">
-            <small class="title text-muted">Welcome {{ user.first_name }}</small>
+            <small class="title text-muted">Welcome {{user.first_name}}!</small>
             <div>
-              <a href="{% url 'dashboard' %}"> Dashboard </a> <span class="dark-transp"> | </span>
-              <a href="{% url 'logout' %}"> Logout </a>
+              <a href="{% url 'dashboard' %}">Dashboard</a> <span class="dark-transp"> | </span>
+              <a href="{% url 'logout' %}"> Logout</a>
             </div>
           </div>
           {% endif %}
