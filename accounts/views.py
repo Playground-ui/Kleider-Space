@@ -257,7 +257,7 @@ def edit_profile(request):
 
 
 @login_required(login_url='login')
-def change_passord(request):
+def change_password(request):
     if request.method == 'POST':
         current_password = request.POST['current_password']
         new_password = request.POST['new_password']
